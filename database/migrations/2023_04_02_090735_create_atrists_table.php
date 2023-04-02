@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('author')->unique();
             $table->text('poster')->nullable();
-            $table->string('title', 30);
-            $table->string('album', 50);
+            $table->text('title');
+            $table->text('album');
             $table->integer('length');
             $table->timestamps();
         });
