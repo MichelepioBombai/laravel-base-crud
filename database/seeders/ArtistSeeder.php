@@ -16,7 +16,7 @@ class ArtistSeeder extends Seeder
      */
     public function run(Faker $faker)
     {
-      for($i = 0; $i < 50; $i++) {
+      for($i = 0; $i < 25; $i++) {
           $Artist = new Artist;
           $Artist->author = $faker->word();
           $Artist->poster = 'https://picsum.photos/200/300';
