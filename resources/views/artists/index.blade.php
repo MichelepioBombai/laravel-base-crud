@@ -1,24 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ env('APP_NAME') }}</title>
+@section('page-name', 'Lista degli artisti')
 
-    
-</head>
 
-<body>
- 
 
-<table class="table">
+@section('main_content')
+
+<table class="table table-dark table-striped">
     <thead>
         <tr>
             <th scope="col">ID</th>
             <th scope="col">author</th>
-            <th scope="col">poster</th>
             <th scope="col">title</th>
             <th scope="col">album</th>
             <th scope="col">length</th>
@@ -30,17 +22,14 @@
         <tr>
             <th scope="row">{{ $artist->id }}</th>
             <td>{{ $artist->author }}</td>
-            <td>{{ $artist->poster }}</td>
             <td>{{ $artist->title }}</td>
             <td>{{ $artist->album }}</td>
             <td>{{ $artist->length }}</td>
-            
+            <td><a href="{{ route('artists.show', ['artist' => $artist]) }}"> dettaglio</a></td>
         </tr>
         @endforeach
     </tbody>
 </table>
-  
-  
-</body>
 
-</html>
+
+@endsection

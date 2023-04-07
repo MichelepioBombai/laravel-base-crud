@@ -14,7 +14,7 @@ class ArtistController extends Controller
      */
     public function index()
     {
-        $artists = Artist::all();
+        $artists = Artist::limit(15)->get();
         return view('artists.index', compact('artists'));
     }
 
@@ -47,7 +47,7 @@ class ArtistController extends Controller
      */
     public function show(Artist $artist)
     {
-        //
+        return view('artists.show', compact('artist'));
     }
 
     /**

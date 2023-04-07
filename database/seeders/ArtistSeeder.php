@@ -19,8 +19,8 @@ class ArtistSeeder extends Seeder
       for($i = 0; $i < 25; $i++) {
           $Artist = new Artist;
           $Artist->author = $faker->word();
-          $Artist->poster = 'https://picsum.photos/200/300';
-          $Artist->title = $faker->word();
+          $Artist->poster = 'https://picsum.photos/300/200';
+          $Artist->title = $faker->words(3, true);
           $Artist->album = $faker->words(3, true);
           $Artist->length = $faker->randomFloat(1, 3, 5);
           
